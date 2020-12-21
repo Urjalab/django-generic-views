@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Create View
+{% endblock title %}
+    
+
+{% block header %}
+    Create View
+{% endblock header %}
+    
+
+
+{% block content %}
+
+<div class="container">
+    <a href="{% url 'blog:list' %}" class="btn btn-secondary">Goto Back</a>
+    <div class="m-2">
+        <div class="card">
+
+            <form method="post">
+                {% csrf_token %}
+                {{form|crispy}}
+                <button class="btn btn-info" type="submit">Create Post</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
